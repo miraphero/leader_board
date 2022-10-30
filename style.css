@@ -142,7 +142,7 @@ h3{
 width: 100%;
 }
 .course{
-    width: 252.42px;
+    width: 230.42px;
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -192,5 +192,51 @@ width: 100%;
     color: #AEAEAE;
 }
 .course-container{
-    display: flex;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 20px;
+    grid-column-gap: 5px;
 }
+
+
+/* responsiveness */
+
+ @media screen and (max-width:576px){
+  .player{
+    width: 40%;
+    margin: 0 auto;
+ } 
+    .player-container, .blog-container, .course-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+   
+    .course, .blog{
+        margin: 0 auto;
+    }
+    
+    hr{
+        width: 90%;
+    }
+    .nav-icon{
+        display: none;
+    }
+    nav span{
+        justify-content: space-evenly;
+    }
+    nav img{
+        padding: 20px 50px;
+    }
+ }
+
+ @media screen and (min-width:577px) and (max-width:768px){
+    .player-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    hr{
+        width: 90%;
+    }
+    .course-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+  
+ }
